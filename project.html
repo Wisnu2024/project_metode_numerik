@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regresi Pangkat dan Eksponensial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #007bff; 
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        canvas {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regresi Pangkat Sederhana</h1>
+        <p>Masukkan data untuk menghitung model regresi pangkat sederhana.</p>
+        
+        <button onclick="resetFields()">Reset</button>
+
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" class="x-value" min="0"></td>
+                    <td><input type="number" class="y-value" min="0"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" class="x-value" min="0"></td>
+                    <td><input type="number" class="y-value" min="0"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="addRow()">Tambah Baris</button>
+        <button onclick="calculateRegression()">Hitung Regresi</button>
+
+        <div class="result" id="result"></div>
+
+        <table id="result-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>ln(X)</th>
+                    <th>ln(Y)</th>
+                    <th>(ln(X))^2</th>
+                    <th>ln(X) * ln(Y)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+         
+
+        <!-- Kanvas untuk menampilkan grafik -->
+        <canvas id="regressionChart" width="800" height="400" style="display:block;"></canvas>
+    </div>
+
+    <!-- Tambahkan Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tambahkan file JavaScript Anda -->
+    <script src="regresi_pangkat_script.js"></script>
+
+</body>
+</html>
